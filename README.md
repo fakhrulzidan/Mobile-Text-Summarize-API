@@ -40,7 +40,7 @@ The API performs **extractive summarization** by analyzing word frequencies and 
    ```bash
    pip install -r requirements.txt
    
-3. **Download NLTK data
+3. **Download NLTK data**
     ```bash
     python -m nltk.downloader punkt stopwords
     
