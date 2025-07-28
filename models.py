@@ -3,8 +3,8 @@
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
 from heapq import nlargest
-# from PyPDF2 import PdfReader
-# import docx
+from PyPDF2 import PdfReader
+import docx
 
 def summarize_text(text, num_sentences):
     sentences = sent_tokenize(text)
@@ -42,14 +42,14 @@ def summarize_text(text, num_sentences):
 
     return summary, stats
 
-# def extract_text_from_pdf(file):
-#     reader = PdfReader(file)
-#     text = ""
-#     for page in reader.pages:
-#         text += page.extract_text() or ""
-#     return text
+def extract_text_from_pdf(file):
+    reader = PdfReader(file)
+    text = ""
+    for page in reader.pages:
+        text += page.extract_text() or ""
+    return text
 
-# def extract_text_from_docx(file):
-#     doc = docx.Document(file)
-#     text = "\n".join([para.text for para in doc.paragraphs])
-#     return text
+def extract_text_from_docx(file):
+    doc = docx.Document(file)
+    text = "\n".join([para.text for para in doc.paragraphs])
+    return text
